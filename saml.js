@@ -212,7 +212,7 @@ exports.createResponse = function(options) {
     response += ' InResponseTo="' + options.inResponseTo + '"';
   }
   if (options.destination) {
-    response += ' Destination="' + options.destination + '"';
+    response += ' Destination="' + options.destination.gsub('&', '&amp;') + '"';
   }
   response += '><saml:Issuer>' + options.issuer + '</saml:Issuer>';
   response += '<samlp:Status><samlp:StatusCode Value="' + options.samlStatusCode + '"/>';
